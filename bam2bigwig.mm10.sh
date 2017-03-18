@@ -13,7 +13,7 @@ chmod 775 fetchChromSizes
 ./fetchChromSizes mm10 > mm10.chrom.sizes
 
 #create plus and minus strand bedgraph
-cat accepted_hits.bed | sort -k1,1 | ./bedItemOverlapCount hg19 -chromSize=hg19.chrom.sizes stdin | sort -k1,1 -k2,2n > accepted_hits.bedGraph
+cat accepted_hits.bed | sort -k1,1 | ./bedItemOverlapCount mm10 -chromSize=mm10.chrom.sizes stdin | sort -k1,1 -k2,2n > accepted_hits.bedGraph
 
 #download bedGraphToBigWig
 wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/bedGraphToBigWig
